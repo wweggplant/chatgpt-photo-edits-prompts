@@ -144,7 +144,7 @@
                 <section id="subscribe" class="bg-indigo-700 text-white rounded-lg p-8 my-10 text-center">
                     <h2 class="text-3xl font-bold mb-3">Get 90+ Pro Prompts & Weekly Trends</h2>
                     <p class="mb-6 max-w-xl mx-auto">Join our newsletter and receive an exclusive PDF with advanced prompts, plus the latest AI editing trends, delivered to your inbox.</p>
-                    <form class="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
+                    <form id="subscribe-form" class="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
                         <input type="email" placeholder="your.email@example.com" required class="w-full sm:w-auto flex-grow px-4 py-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-400" style="height: 44px;">
                         <button type="submit" class="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-indigo-900 font-bold py-3 px-6 rounded-md transition duration-300" style="height: 44px;">Send Me the PDF</button>
                     </form>
@@ -283,6 +283,13 @@
                     console.error('Failed to copy text: ', err);
                 });
             });
+        });
+
+        document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const subject = "Request for 90+ Pro Prompts PDF";
+            const body = "Hi! Please send the exclusive PDF to the email address I provided on the website. Thank you!";
+            window.location.href = `mailto:support@promptedit.xyz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         });
     </script>
     
