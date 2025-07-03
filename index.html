@@ -66,7 +66,7 @@
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body id="top" class="text-gray-800">
 
     <!-- Hero Section -->
     <header class="hero-bg relative text-white text-center py-20 md:py-32 px-4">
@@ -88,10 +88,24 @@
 
         <!-- Prompt Library -->
         <section id="prompt-library" class="max-w-4xl mx-auto">
+            <div class="mb-8 p-4 bg-gray-100 rounded-lg">
+                <h3 class="text-xl font-bold mb-3 text-center">Quick Navigation</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center text-sm">
+                    <a href="#beauty" class="text-indigo-600 hover:underline p-1">Skin & Beauty</a>
+                    <a href="#removal" class="text-indigo-600 hover:underline p-1">Object Removal</a>
+                    <a href="#backgrounds" class="text-indigo-600 hover:underline p-1">Backgrounds</a>
+                    <a href="#filters" class="text-indigo-600 hover:underline p-1">Stylized Filters</a>
+                    <a href="#extension" class="text-indigo-600 hover:underline p-1">Canvas Extension</a>
+                    <a href="#branding" class="text-indigo-600 hover:underline p-1">Branding</a>
+                    <a href="#trending" class="text-indigo-600 hover:underline p-1">Trending</a>
+                    <a href="#style-transfer" class="text-indigo-600 hover:underline p-1">Style Transfer</a>
+                    <a href="#compositing" class="text-indigo-600 hover:underline p-1">Adding Elements</a>
+                </div>
+            </div>
             <div class="space-y-6">
                 
                 <!-- 1. Basic Beauty -->
-                <details open class="bg-white p-4 rounded-lg shadow-md">
+                <details id="beauty" open class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">🍑 5 ChatGPT Photo Editing Prompts for Skin & Beauty</summary>
                     <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>Remove blemishes, smooth skin tone, preserve natural pores</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -103,7 +117,7 @@
                 </details>
 
                 <!-- 2. Object Removal/Replacement -->
-                <details class="bg-white p-4 rounded-lg shadow-md">
+                <details id="removal" class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">🚫 5 ChatGPT Photo Editing Prompts for Object Removal</summary>
                     <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>Remove background tourists, reconstruct cobblestone street</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -115,7 +129,7 @@
                 </details>
 
                 <!-- 3. Background Replacement -->
-                <details class="bg-white p-4 rounded-lg shadow-md">
+                <details id="backgrounds" class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">🏞️ 5 ChatGPT Photo Editing Prompts for Backgrounds</summary>
                     <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>Replace background with golden-hour beach, warm pastel tones</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -137,7 +151,7 @@
                 </section>
 
                 <!-- 4. Stylized Filters -->
-                <details class="bg-white p-4 rounded-lg shadow-md">
+                <details id="filters" class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">🎨 10 ChatGPT Photo Editing Prompts for Stylized Filters</summary>
                     <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>Convert to watercolor painting, soft washes</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -154,7 +168,7 @@
                 </details>
 
                 <!-- 5. Canvas Extension -->
-                <details class="bg-white p-4 rounded-lg shadow-md">
+                <details id="extension" class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">↔️ 5 ChatGPT Photo Editing Prompts for Canvas Extension</summary>
                     <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>Extend canvas left & right, continue cliff-side coastline</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -166,7 +180,7 @@
                 </details>
 
                 <!-- Other categories... -->
-                 <details class="bg-white p-4 rounded-lg shadow-md">
+                 <details id="branding" class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">🏢 5 ChatGPT Photo Editing Prompts for Branding</summary>
                      <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>Insert semi-transparent white logo bottom-right</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -177,7 +191,7 @@
                     </div>
                 </details>
 
-                <details class="bg-white p-4 rounded-lg shadow-md">
+                <details id="trending" class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">🔥 5 Trending ChatGPT Photo Editing Prompts</summary>
                     <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>"Pet-to-Human" portrait, studio lighting, 4 K</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -188,7 +202,7 @@
                     </div>
                 </details>
 
-                <details class="bg-white p-4 rounded-lg shadow-md">
+                <details id="style-transfer" class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">🎭 5 ChatGPT Photo Editing Prompts for Character Styles</summary>
                     <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>Transform into formal corporate headshot, neutral gray bg</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -199,7 +213,7 @@
                     </div>
                 </details>
 
-                <details class="bg-white p-4 rounded-lg shadow-md">
+                <details id="compositing" class="bg-white p-4 rounded-lg shadow-md">
                     <summary class="text-xl font-bold mb-3">✨ 5 ChatGPT Photo Editing Prompts for Adding Elements</summary>
                     <div class="space-y-3 mt-4">
                         <div class="prompt-card bg-gray-50 p-3 rounded-md flex justify-between items-center"><code>Add neon halo around subject, soft outer glow</code><button class="copy-btn bg-gray-200 hover:bg-gray-300 text-sm font-semibold py-1 px-3 rounded">Copy</button></div>
@@ -219,7 +233,7 @@
             <div class="space-y-4">
                 <details class="bg-white p-4 rounded-lg shadow-sm">
                     <summary class="font-semibold text-lg">How do I use these prompts in ChatGPT?</summary>
-                    <p class="mt-2 text-gray-600">Most AI image editors (like ChatGPT with DALL-E, Midjourney, or Photoshop Generative Fill) follow a simple process: select or mask the area of the photo you want to change, then paste one of these prompts into the text box and generate. It's a "selection + prompt" workflow.</p>
+                    <p class="mt-2 text-gray-600">Most AI image editors (like ChatGPT with DALL-E, Midjourney, or Photoshop Generative Fill) follow a simple process: select or mask the area of the photo you want to change, then paste <a href="#prompt-library" class="text-indigo-500 hover:underline">one of these prompts</a> into the text box and generate. It's a "selection + prompt" workflow.</p>
                 </details>
                 <details class="bg-white p-4 rounded-lg shadow-sm">
                     <summary class="font-semibold text-lg">Is editing photos with ChatGPT really free?</summary>
@@ -242,6 +256,8 @@
         <div class="container mx-auto px-4 py-8 text-center">
             <p>&copy; 2025 ChatGPT Photo Editing Prompts. All Rights Reserved.</p>
             <div class="mt-4">
+                <a href="#top" class="text-gray-400 hover:text-white mx-2">Back to Top</a>
+                <span class="text-gray-500">|</span>
                 <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
                 <span class="text-gray-500">|</span>
                 <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
