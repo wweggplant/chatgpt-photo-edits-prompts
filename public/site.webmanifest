@@ -1,7 +1,7 @@
 {
-  "name": "BitChat App - Bluetooth Mesh Chat",
-  "short_name": "BitChat",
-  "description": "Bluetooth mesh chat without internet. Talk freely when Wi-Fi is down, no servers, completely anonymous.",
+  "name": "PromptEdit | ChatGPT Photo Editing Prompts",
+  "short_name": "PromptEdit",
+  "description": "Unlock 50+ free, copy-paste ChatGPT prompts for photo editing. Erase objects, swap backgrounds, and apply stunning styles without Photoshop.",
   "start_url": "/",
   "scope": "/",
   "icons": [

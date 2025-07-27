@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.promptedit.xyz/sitemap.xml 
+Sitemap: https://www.promptedit.xyz/sitemap-index.xml 
