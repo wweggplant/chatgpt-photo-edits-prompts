@@ -1,18 +1,19 @@
 name = "promptedit-xyz"
-compatibility_date = "2024-01-01"
+compatibility_date = "2025-07-15"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
 SITE_TITLE = "ChatGPT Photo Editing Prompts – 50 Free Templates (2025)"
 SITE_DESCRIPTION = "Unlock 50+ free, copy-paste ChatGPT prompts for photo editing. Erase objects, swap backgrounds, and apply stunning styles without Photoshop."
-SITE_URL="https://promptedit.xyz"
 DEV_URL="http://localhost:4321"
-GA_TRACKING_ID = "G-V7ERK24WB7"
 SITE_AUTHOR = "ChatGPT Photo Editing Prompts"
 SITE_GENERATOR = "Astro Photo Prompts Site"
 
 [env.production]
 name = "promptedit-xyz"
+[env.production.vars]
+SITE_URL        = "https://promptedit.xyz"
+PUBLIC_GA_TRACKING_ID  = "G-V7ERK24WB7"
 
 [env.preview]
 name = "promptedit-xyz-preview"

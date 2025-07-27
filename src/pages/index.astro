@@ -36,7 +36,6 @@ const faqData = faqItems.map(item => ({
     "text": item.answer.replace(/<[^>]*>/g, '') // Remove HTML tags for structured data
   }
 }));
-console.log(faqData, 'faqData');
 ---
 
 <Layout title={siteTitle} description={siteDescription}>
