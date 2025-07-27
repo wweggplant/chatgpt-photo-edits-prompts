@@ -1,0 +1,190 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { promptCategories } from '@/data/prompts';
+import PromptCard from '@/components/react/PromptCard';
+import Toaster from '@/components/react/Toaster';
+import Faq from '@/components/react/Faq';
+const siteTitle = "ChatGPT Photo Editing Prompts – 50 Free Templates (2025)";
+const siteDescription = "Unlock 50+ free, copy-paste ChatGPT prompts for photo editing. Erase objects, swap backgrounds, and apply stunning styles without Photoshop.";
+
+// FAQ data for both structured data and React component
+const faqItems = [
+  {
+    question: "How do I use these prompts in ChatGPT?",
+    answer: `Most AI image editors (like ChatGPT with DALL-E, Midjourney, or Photoshop Generative Fill) follow a simple process: select or mask the area of the photo you want to change, then paste <a title="Jump to Prompt Library" href="#prompt-library" class="text-indigo-500 hover:underline">one of these prompts</a> into the text box and generate. It's a "selection + prompt" workflow.`
+  },
+  {
+    question: "Is editing photos with ChatGPT really free?",
+    answer: "Basic image generation and editing are included with a ChatGPT Plus subscription. There are usage limits, but for casual use, it's generally sufficient. Always check OpenAI's latest policy for the most up-to-date information on usage and costs."
+  },
+  {
+    question: "How can I get more natural results?",
+    answer: `Three tips: 1. Be specific (e.g., instead of "change hair," try "change hair to a long, wavy blonde ponytail"). 2. Iterate multiple times on the same selection to see different results. 3. For complex changes, break it down into smaller steps (e.g., first change the background, then add an object).`
+  },
+  {
+    question: "What makes a good ChatGPT photo editing prompt?",
+    answer: `A great <strong>ChatGPT photo editing prompt</strong> is specific, descriptive, and clearly outlines the desired style and action. Instead of "make it look better," a strong prompt would be "Adjust the lighting to a warm, golden hour glow, enhance the saturation of the sky, and sharpen the details of the mountain range." Providing context and constraints leads to more predictable and high-quality results.`
+  }
+];
+
+// Convert FAQ items to structured data format
+const faqData = faqItems.map(item => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer.replace(/<[^>]*>/g, '') // Remove HTML tags for structured data
+  }
+}));
+console.log(faqData, 'faqData');
+---
+
+<Layout title={siteTitle} description={siteDescription}>
+  <!-- SEO Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData
+  })} />
+
+  <!-- Hero Section -->
+  <header class="hero-bg relative text-white text-center py-20 md:py-32 px-4">
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="relative z-10">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+        50+ Free ChatGPT Photo-Editing Prompts
+      </h1>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-300">
+        Erase objects, swap backgrounds, add magic—no Photoshop needed.
+      </p>
+      <a 
+        href="#prompt-library" 
+        class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105"
+      >
+        Scroll to Prompts
+      </a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <!-- Intro Text -->
+    <section class=" mx-auto text-center mb-12">
+      <p class="text-gray-600 leading-relaxed">
+        I've gathered and refined over 50 of the most popular and effective ChatGPT / DALL-E photo editing prompts from more than 10 reliable sources, including Nicolesy, CyberLink, and the OpenAI Community. This curated library of <strong>ChatGPT photo editing prompts</strong> covers 9 common scenarios, making it easy to copy, paste, and create stunning images. Whether you're a beginner or a pro, these templates will streamline your workflow.
+      </p>
+    </section>
+
+    <!-- Prompt Library -->
+    <section id="prompt-library" class=" mx-auto">
+      <!-- Quick Navigation -->
+      <div class="mb-8 p-4 bg-gray-100 rounded-lg">
+        <h3 class="text-xl font-bold mb-3 text-center">Quick Navigation</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center text-sm">
+          {promptCategories.map((category) => (
+            <a 
+              href={`#${category.id}`} 
+              class="text-indigo-600 hover:underline p-1"
+            >
+              {category.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Prompt Categories -->
+      <div class="space-y-6">
+        {promptCategories.map((category) => (
+          <details 
+            id={category.id} 
+            class="bg-white p-4 rounded-lg shadow-md" 
+            open={category.id === 'beauty'}
+          >
+            <summary class="text-xl font-bold mb-3 cursor-pointer list-none flex items-center">
+              <span class="mr-2">{category.emoji}</span>
+              {category.description}
+            </summary>
+            <div class="space-y-3 mt-4">
+              {category.prompts.map((prompt) => (
+                <PromptCard prompt={prompt.text} client:load />
+              ))}
+            </div>
+          </details>
+        ))}
+
+        <!-- CTA Section -->
+        <section id="subscribe" class="bg-indigo-700 text-white rounded-lg p-8 my-10 text-center">
+          <h2 class="text-3xl font-bold mb-3 text-white">Get 90+ Pro Prompts & Weekly Trends</h2>
+          <p class="mb-6 max-w-xl mx-auto">
+            Join our newsletter and receive an exclusive PDF with advanced prompts, plus the latest AI editing trends, delivered to your inbox.
+          </p>
+          <form id="subscribe-form" class="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="your.email@example.com" 
+              required 
+              class="w-full sm:w-auto flex-grow px-4 py-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            />
+            <button 
+              type="submit" 
+              class="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-indigo-900 font-bold py-3 px-6 rounded-md transition duration-300"
+            >
+              Send Me the PDF
+            </button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <Faq faqItems={faqItems} client:load />
+  </main>
+
+  <!-- Toast Notifications -->
+  <Toaster client:load />
+
+  <!-- Custom Styles -->
+  <style is:global>
+    .hero-bg {
+      background-image: url('https://placehold.co/1200x800/4a5568/a0aec0/gif?text=Before/After+Effect');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    details > summary {
+      cursor: pointer;
+      list-style: none;
+    }
+    
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    details > summary::before {
+      content: '👉';
+      margin-right: 0.5rem;
+    }
+    
+    details[open] > summary::before {
+      content: '👇';
+    }
+    
+    .prompt-card {
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .prompt-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+  </style>
+
+  <!-- JavaScript for form handling -->
+  <script is:inline>
+    document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const subject = "Request for 90+ Pro Prompts PDF";
+      const body = "Hi! Please send the exclusive PDF to the email address I provided on the website. Thank you!";
+      window.location.href = `mailto:support@promptedit.xyz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</Layout>

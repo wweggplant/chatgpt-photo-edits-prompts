@@ -1,0 +1,84 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { SITE_TITLE } from '@/consts';
+
+const pageTitle = `Terms of Service - ${SITE_TITLE}`;
+const pageDescription = "Terms of Service for PromptEdit - Decentralized Bluetooth mesh chat application. Understand your rights and responsibilities when using our service.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+    <main class="max-w-5xl mx-auto px-6 py-16">
+        {/*  Hero Section */}
+        <section class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent dark:from-white dark:to-gray-100">
+                Terms of Service
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Last updated: July 15, 2025
+            </p>
+        </section>
+
+        {/*  Terms Content */}
+        <section class="prose prose-lg max-w-none text-gray-700 dark:text-gray-300">
+            
+            <h2 class="text-2xl font-bold mt-8 mb-4">1. Acceptance of Terms</h2>
+            <p>By accessing and using PromptEdit ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must not use the App. These Terms apply to all users of the App, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.</p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">2. Description of Service</h2>
+            <p>PromptEdit is a decentralized communication application that enables peer-to-peer messaging using Bluetooth mesh networking technology. The App operates without centralized servers or internet connectivity, allowing users to communicate directly with nearby devices.</p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">3. Privacy and Data Security</h2>
+            <p>PromptEdit is designed with privacy as a core principle:</p>
+            <ul>
+                <li>No user accounts or registration required</li>
+                <li>Ephemeral encryption keys generated on each app launch</li>
+                <li>No persistent storage of user identities or message history</li>
+                <li>End-to-end encryption for all communications</li>
+                <li>No collection of personal information or usage data</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">4. User Responsibilities</h2>
+            <p>As a user of PromptEdit, you agree to:</p>
+            <ul>
+                <li>Use the App only for lawful purposes</li>
+                <li>Respect the rights and privacy of other users</li>
+                <li>Not use the App to transmit harmful, threatening, or harassing content</li>
+                <li>Not attempt to reverse engineer or modify the App beyond its intended use</li>
+                <li>Comply with all applicable local, state, national, and international laws</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">5. Intellectual Property</h2>
+            <p>PromptEdit is open-source software released under the MIT License. You are free to use, modify, and distribute the software in accordance with the MIT License terms. The PromptEdit name and logo are trademarks of the PromptEdit.</p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">6. Disclaimer of Warranties</h2>
+            <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULL EXTENT PERMISSIBLE BY LAW, WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:</p>
+            <ul>
+                <li>WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT</li>
+                <li>WARRANTIES RELATING TO THE ACCURACY, RELIABILITY, OR COMPLETENESS OF ANY CONTENT</li>
+                <li>WARRANTIES THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">7. Limitation of Liability</h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL BITCHAT, ITS CONTRIBUTORS, OR ANY OTHER PARTY INVOLVED IN THE CREATION, PRODUCTION, OR DELIVERY OF THE APP, BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES) ARISING OUT OF OR RELATING TO THE USE OR INABILITY TO USE THE APP, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">8. Experimental Software Notice</h2>
+            <p>PromptEdit is experimental software that has not undergone comprehensive security audits. While designed with security best practices in mind, it should not be relied upon for sensitive communications until proper security reviews are completed. Users are advised to exercise caution and understand the inherent risks of using experimental cryptographic software.</p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">9. Changes to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. Changes will be posted on our website and will be effective immediately. Your continued use of the App after any changes constitutes acceptance of the modified Terms.</p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">10. Contact Information</h2>
+            <p>For questions about these Terms, please contact us through:</p>
+            <ul>
+                <li>Email: <a href="mailto:contact@promptedit.xyz" class="text-blue-600 hover:underline">contact@promptedit.xyz</a></li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">11. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws applicable to open-source software, without regard to its conflict of law provisions.</p>
+
+            <p class="mt-12 text-sm text-gray-600 dark:text-gray-400">
+                By using PromptEdit, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+            </p>
+        </section>
+    </main>
+</Layout>

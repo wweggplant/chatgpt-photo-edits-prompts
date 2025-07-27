@@ -1,0 +1,10 @@
+{ "defaultMode": "bypassPermissions",
+  "permissions": {
+    "deny": [
+      "Read(.cursor/**)",
+      "Read(node_modules/**)",
+      "Read(.specstory/**)",
+      "Read(.env*)"
+    ]
+  }
+}

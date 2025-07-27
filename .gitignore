@@ -1,2 +1,8 @@
 .specstory/
 .DS_Store
+.env.local
+.env
+node_modules
+dist
+.astro/
+.wrangler/

@@ -1,0 +1,32 @@
+{
+  "name": "BitChat App - Bluetooth Mesh Chat",
+  "short_name": "BitChat",
+  "description": "Bluetooth mesh chat without internet. Talk freely when Wi-Fi is down, no servers, completely anonymous.",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["communication", "utilities", "social"]
+}

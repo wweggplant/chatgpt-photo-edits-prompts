@@ -1,0 +1,37 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
+---
+
+<Layout title={SITE_TITLE ?? ''} description={SITE_DESCRIPTION ?? ''}>
+  <section class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-4">{SITE_TITLE}</h1>
+    <p class="mb-6 text-lg leading-relaxed">
+      Welcome to <strong>PromptEdit</strong>, where we harness the power of AI to transform your photo editing workflow. Our mission is simple: to provide clear, actionable prompts you can feed into ChatGPT or your favorite AI-driven editing tools, so that you get consistent, creative, and professional results every time.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Why Photo Editing Prompts?</h2>
+    <p class="mb-6 text-lg leading-relaxed">
+      Even skilled editors can spend hours experimenting with filters, adjustment layers, and color grades. With thoughtfully crafted prompts, you can skip the guesswork. Whether you’re aiming for a vintage film look, a dramatic cinematic grade, or a soft pastel vibe, our prompts break down each step—making advanced edits accessible to everyone.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Who We Are</h2>
+    <p class="mb-6 text-lg leading-relaxed">
+      We’re a team of photographers, designers, and AI enthusiasts who saw the potential in combining human creativity with generative intelligence. PromptEdit was born from our own needs: to streamline batch edits, maintain brand consistency, and explore new styles faster than ever before.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">What You’ll Find Here</h2>
+    <ul class="list-disc list-inside mb-6 text-lg leading-relaxed">
+      <li>Curated prompt templates for common styles and moods</li>
+      <li>Step-by-step guides to customize edits for your own projects</li>
+      <li>Before-and-after case studies showcasing real results</li>
+      <li>Tips and best practices for integrating AI into your toolbox</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mb-3">Get Started</h2>
+    <p class="mb-6 text-lg leading-relaxed">
+      Dive into our <a href="/blog" class="text-blue-600 underline">blog</a> for hands-on examples, or jump straight to our <a href="/" class="text-blue-600 underline">prompt library</a> to find the right style for your next project. Have questions? Reach out via our email us at <a href="mailto:support@promptedit.xyz" class="text-blue-600 underline">support@promptedit.xyz</a> — we love hearing how you’re using ChatGPT to elevate your images.
+    </p>
+
+  </section>
+</Layout>

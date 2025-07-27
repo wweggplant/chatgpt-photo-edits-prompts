@@ -1,148 +1,147 @@
-### Quick Overview
 
-I have compiled information from over 10 reliable sources—including Nicolesy, CyberLink, Selldone, Tom's Guide, Photoshop Training Channel, OpenAI Community, Medium, and Reddit—to select 50 of the most popular and field-tested **ChatGPT / DALL-E in-painting and photo editing prompts**.
+# LightLandingPage Astro 模板
 
-To facilitate easy implementation on a single-page static site, they are grouped into 9 common scenarios below, providing ready-to-copy English prompts. Each group notes the reference source, allowing you to add attributions or further reading links on your page.
+这是一个使用 Astro 构建的独立站模板，专为快速搭建高性能的营销页面、博客或个人网站而设计。它集成了 Tailwind CSS 用于样式设计，支持 MDX，并已配置好通过 Cloudflare Pages 进行部署。
+
+## ✨ 功能特性
+
+- **🚀 Astro**: 使用 Astro 框架，享受极致的性能和优秀的开发体验。
+- **🎨 Tailwind CSS**: 集成 Tailwind CSS，轻松构建现代化、响应式的用户界面。
+- **✍️ MDX 支持**: 可以在 Markdown 文件中直接使用 JSX 组件，内容创作更灵活。
+- **⚛️ React 集成**: 无缝集成 React，可以在 Astro 页面中使用 React 组件。
+- **SEO 友好**: 自动生成 `sitemap.xml` 和 `robots.txt`。
+- **☁️ Cloudflare Pages**: 预配置了 `wrangler.toml`，方便一键部署到 Cloudflare Pages。
+
+## 🛠️ 技术栈
+
+- [Astro](https://astro.build/) - 网站构建框架
+- [React](https://reactjs.org/) - 前端 UI 库
+- [Tailwind CSS](https://tailwindcss.com/) - CSS 框架
+- [MDX](https://mdxjs.com/) - 在 Markdown 中使用 JSX
+- [Cloudflare Pages](https://pages.cloudflare.com/) - 部署平台
+
+## 📁 项目结构
+
+```
+├── public/                  # 静态资源，如图片、字体和 favicon
+│   ├── fonts/
+│   └── imgs/
+├── src/
+│   ├── assets/              # 需要处理的资源（例如，图片优化）
+│   ├── components/          # Astro 和 React 组件
+│   │   └── react/           # React 特定组件
+│   ├── content/             # 内容集合，如博客文章
+│   │   └── blog/
+│   ├── hooks/               # React hooks
+│   ├── layouts/             # 页面布局组件
+│   ├── pages/               # 页面路由
+│   │   ├── api/             # API 路由
+│   │   └── blog/
+│   ├── services/            # 对接外部服务的代码
+│   └── styles/              # 全局样式
+├── astro.config.mjs         # Astro 配置文件
+├── tailwind.config.mjs      # Tailwind CSS 配置文件
+├── tsconfig.json            # TypeScript 配置文件
+├── wrangler.toml            # Cloudflare Pages 部署配置文件
+└── package.json             # 项目依赖和脚本
+```
+
+## ⚙️ 配置文件说明
+
+### `astro.config.mjs`
+
+Astro 的核心配置文件，用于配置站点信息和集成。
+
+- **site**: 网站的 URL，从 `.env` 文件或环境变量中读取。
+- **integrations**:
+  - `@astrojs/tailwind`: 集成 Tailwind CSS。
+  - `@astrojs/mdx`: 提供 MDX 支持。
+  - `@astrojs/sitemap`: 自动生成站点地图。
+  - `@astrojs/react`: 集成 React。
+- **output**: 设置为 `server` 以支持服务端渲染 (SSR)。
+- **adapter**: 使用 `@astrojs/cloudflare` 适配器，以便部署到 Cloudflare Pages。
+
+### `tailwind.config.mjs`
+
+Tailwind CSS 的配置文件。
+
+- **content**: 指定了需要扫描以生成 CSS 的文件路径，涵盖了 `src` 目录下的所有相关文件类型。
+
+### `wrangler.toml`
+
+Cloudflare Pages 的配置文件。
+
+- **name**: Cloudflare Pages 项目的名称。
+- **compatibility_date**: 兼容性日期。
+- **[vars]**: 定义环境变量，如 `SITE_TITLE`, `SITE_DESCRIPTION`, `SITE_URL` 等，这些变量可以在应用中访问。
+- **[env.production]** & **[env.preview]**: 为不同环境（生产和预览）设置特定的配置。
+
+## 🚀 标准操作流程 (SOP)
+
+### 1. 环境准备
+
+- 安装 [Node.js](https://nodejs.org/) (版本 18 或更高)。
+- 安装 [pnpm](https://pnpm.io/)。
+- 克隆本项目。
+
+### 2. 安装依赖
+
+在项目根目录下运行：
+
+```bash
+pnpm install
+```
+
+### 3. 本地开发
+
+要启动本地开发服务器，请运行：
+
+```bash
+pnpm run dev
+```
+
+这将在 `http://localhost:4321` 启动一个热重载的开发服务器。
+
+### 4. 创建新页面
+
+在 `src/pages/` 目录下创建一个新的 `.astro` 或 `.md` 文件。Astro 会根据文件路径自动创建路由。
+
+### 5. 创建新博文
+
+在 `src/content/blog/` 目录下创建一个新的 `.md` 或 `.mdx` 文件。
+
+### 6. 构建项目
+
+要为生产环境构建项目，请运行：
+
+```bash
+pnpm run build
+```
+
+构建产物将输出到 `dist/` 目录。
+
+### 7. 预览构建
+
+要在本地预览构建后的站点，请运行：
+
+```bash
+pnpm run preview
+```
+
+如果你想模拟 Cloudflare Pages 环境进行预览，可以运行：
+
+```bash
+pnpm run preview:cf
+```
+
+### 8. 部署到 Cloudflare Pages
+
+该模板已配置为使用 [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/get-started/) 或通过 Git 集成进行部署。
+
+- **通过 Git**: 将你的仓库连接到 Cloudflare Pages，并配置构建命令为 `pnpm run build`，输出目录为 `dist`。
+- **通过 Wrangler CLI**:
+  1. 登录到 Cloudflare: `npx wrangler login`
+  2. 部署项目: `npx wrangler pages deploy dist`
 
 ---
-
-## 1 | Basic Beauty (5 Prompts)
-
-| # | Prompt                                                       | Description                               |
-| - | ------------------------------------------------------------ | ----------------------------------------- |
-| 1 | *Remove blemishes, smooth skin tone, preserve natural pores* | Remove blemishes, but preserve skin texture ([tomsguide.com][1]) |
-| 2 | *Brighten portrait lighting with soft studio glow*           | Brighten portrait with soft light ([cyberlink.com][2]) |
-| 3 | *Reduce dark circles, keep eye texture realistic*            | Reduce dark circles, keep texture ([nicolesy.com][3]) |
-| 4 | *Whiten teeth naturally, avoid over-saturation*              | Natural teeth whitening ([community.openai.com][4]) |
-| 5 | *Add subtle freckles, sun-kissed look*                       | Add subtle freckles, sun-kissed look ([reddit.com][5]) |
-
----
-
-## 2 | Object Removal / Replacement (5 Prompts)
-
-| #  | Prompt                                                       | Description                                       |
-| -- | ------------------------------------------------------------ | ------------------------------------------------- |
-| 6  | *Remove background tourists, reconstruct cobblestone street* | Remove pedestrians and reconstruct the street ([medium.com][6]) |
-| 7  | *Erase overhead power lines, fill with clear blue sky*       | Erase power lines and fill in the sky ([photoshoptrainingchannel.com][7]) |
-| 8  | *Delete watermark, rebuild matching sand texture*            | Delete watermark and reconstruct the sand surface ([photoshoptrainingchannel.com][7]) |
-| 9  | *Replace plastic bag with blooming wildflowers*              | Replace trash with flowers ([reddit.com][8]) |
-| 10 | *Swap broken traffic light for modern LED signal*            | Replace road facility ([community.openai.com][9]) |
-
----
-
-## 3 | Background Replacement (5 Prompts)
-
-| #  | Prompt                                                                              |
-| -- | ----------------------------------------------------------------------------------- |
-| 11 | *Replace background with golden-hour beach, warm pastel tones* ([cyberlink.com][2]) |
-| 12 | *Swap backdrop to neon cyberpunk alley, magenta-cyan lights* ([selldone.com][10])   |
-| 13 | *Flat pastel beige studio background, soft 45° shadow* ([editingprompt.com][11])    |
-| 14 | *Place subject inside minimalist Japanese tatami room* ([blog.mlq.ai][12])          |
-| 15 | *Move subject to misty pine forest with back-lit fog* ([tomsguide.com][1])          |
-
----
-
-## 4 | Stylized Filters (10 Prompts) – Selections from Nicolesy's "50 Art Style Prompts"
-
-| #  | Prompt                                                                      |
-| -- | --------------------------------------------------------------------------- |
-| 16 | *Convert to watercolor painting, soft washes* ([nicolesy.com][3])           |
-| 17 | *Apply cyberpunk neon grade, strong magenta-teal glow* ([selldone.com][10]) |
-| 18 | *Turn into oil-painting texture, visible brush strokes* ([nicolesy.com][3]) |
-| 19 | *Transform into 8-bit pixel-art, 64×64 vibe* ([cyberlink.com][2])           |
-| 20 | *Render in Pixar-style illustration, glossy eyes* ([selldone.com][10])      |
-| 21 | *High-contrast black-and-white darkroom look* ([nicolesy.com][3])           |
-| 22 | *Apply vintage film grain, light leaks & warm fade* ([cyberlink.com][2])    |
-| 23 | *Claymation stop-motion style, visible sculpt marks* ([selldone.com][10])   |
-| 24 | *Origami folded-paper aesthetic, minimalist shadows* ([selldone.com][10])   |
-| 25 | *Lego mini-figure world, colorful plastic bricks* ([selldone.com][10])      |
-
----
-
-## 5 | Canvas Extension / Out-painting (5 Prompts)
-
-| #  | Prompt                                                                                |
-| -- | ------------------------------------------------------------------------------------- |
-| 26 | *Extend canvas left & right, continue cliff-side coastline* ([editingprompt.com][13]) |
-| 27 | *Outpaint upper area with dramatic sunset clouds* ([nicolesy.com][3])                 |
-| 28 | *Add more foreground path, match perspective & texture* ([community.openai.com][4])   |
-| 29 | *Expand background into bustling city skyline at dusk* ([tomsguide.com][1])           |
-| 30 | *Widen frame with blurred motion cyclists to left* ([reddit.com][14])                 |
-
----
-
-## 6 | Branding Elements (5 Prompts)
-
-| #  | Prompt                                                                                  |
-| -- | --------------------------------------------------------------------------------------- |
-| 31 | *Insert semi-transparent white logo bottom-right* ([editingprompt.com][11])             |
-| 32 | *Embed diagonal watermark "SAMPLE" at 20 % opacity* ([photoshoptrainingchannel.com][7]) |
-| 33 | *Add Instagram handle in clean sans-serif overlay* ([cyberlink.com][2])                 |
-| 34 | *Mock up product box with on-brand colors & tagline* ([writesonic.com][15])             |
-| 35 | *Generate square social-media post frame, matching palette* ([selldone.com][10])        |
-
----
-
-## 7 | Social Media / Trending (5 Prompts)
-
-| #  | Prompt                                                                         |
-| -- | ------------------------------------------------------------------------------ |
-| 36 | *"Pet-to-Human" portrait, studio lighting, 4 K* ([cyberlink.com][2])           |
-| 37 | *90s CRT-TV shot of Sonic playing on a PS 1* ([cyberlink.com][2])              |
-| 38 | *Stylized action figure sealed in blister pack* ([cyberlink.com][2])           |
-| 39 | *3D fluffy icon of a coffee cup, floating on gray* ([cyberlink.com][2])        |
-| 40 | *Vaporwave album-cover aesthetic, neon grid & palm trees* ([selldone.com][10]) |
-
----
-
-## 8 | Character Style Transfer (5 Prompts)
-
-| #  | Prompt                                                                                    |
-| -- | ----------------------------------------------------------------------------------------- |
-| 41 | *Transform into formal corporate headshot, neutral gray bg* ([tomsguide.com][1])          |
-| 42 | *Convert selfie into cinematic movie poster, teal-orange grade* ([editingprompt.com][16]) |
-| 43 | *Turn portrait into classic Bollywood film still, 1970s* ([editingprompt.com][17])        |
-| 44 | *Create manga character version, sparkling eyes & cel shading* ([selldone.com][10])       |
-| 45 | *Generate LEGO mini-figure avatar with matching outfit* ([selldone.com][10])              |
-
----
-
-## 9 | Compositing & Adding Elements (5 Prompts)
-
-| #  | Prompt                                                                           |
-| -- | -------------------------------------------------------------------------------- |
-| 46 | *Add neon halo around subject, soft outer glow* ([cyberlink.com][2])             |
-| 47 | *Place golden retriever beside child, realistic scale* ([editingprompt.com][18]) |
-| 48 | *Insert dramatic lightning bolt in background sky* ([editingprompt.com][18])     |
-| 49 | *Blend Mount Fuji & Tokyo Tower into panoramic scene* ([tomsguide.com][1])       |
-| 50 | *Overlay magical fireflies, warm bioluminescent trails* ([selldone.com][19])     |
-
----
-
-### Usage Tips
-
-1.  **Select Area → Paste Prompt**: Most in-painting tools (like ChatGPT In-paint, Photoshop Generative Fill, Stable Diffusion Inpaint) follow a "selection + text description" workflow. ([community.openai.com][9])
-2.  **Follow a 5-step formula**: Subject → Action → Details → Style → Constraints, to significantly reduce deviation. ([community.openai.com][4])
-3.  **Iterate multiple times**: Generate repeatedly on the same selection, pick the best result, or continue refining to achieve more natural blending. ([nicolesy.com][3])
-
-By directly copying these 50 prompts into your HTML static page, paired with corresponding before/after GIFs or WebPs, you can satisfy the user search intent for "free, ready-to-use" prompts and quickly establish content authority in SERPs. Good luck with your launch!
-
-[1]: https://www.tomsguide.com/ai/i-replaced-photoshop-with-chatgpts-new-ai-image-generator-heres-what-happened?utm_source=chatgpt.com "I replaced Photoshop with ChatGPT's new AI image generator - here's what happened"
-[2]: https://www.cyberlink.com/blog/photo-editing-online-tools/3693/chatgpt-image-prompts-ideas?srsltid=AfmBOoo3aiHZWQkPA6ejL3mXyMEXMaqEy7ESZThnEDGCSQxJYallo4wk "9 ChatGPT Image Ideas & Prompts — Plus the Best Alternative Tool to Try"
-[3]: https://nicolesy.com/2023/09/25/50-art-style-prompts-photoshop-generative-ai-fill/ "50 Art Style Prompts for Photoshop Generative AI Fill — Nicolesy"
-[4]: https://community.openai.com/t/dalle3-and-gpt-image-1-prompt-tips-and-tricks-thread/498040?utm_source=chatgpt.com "DALLE3 and gpt-image-1 Prompt Tips and Tricks Thread"
-[5]: https://www.reddit.com/r/ChatGPT/comments/1joxyjg/how_do_i_prompt_chatgpt_to_edit_or_enhance_my/?utm_source=chatgpt.com "How do I prompt ChatGPT to edit or enhance my personal photos ..."
-[6]: https://medium.com/%40andrewwongai/how-to-remove-unwanted-objects-in-photos-with-ai-inpainting-72ab5c8f7f1f?utm_source=chatgpt.com "How to remove unwanted objects in photos with AI inpainting"
-[7]: https://photoshoptrainingchannel.com/generative-fill-in-photoshop-the-ultimate-guide/?utm_source=chatgpt.com "Generative Fill in Photoshop - The Ultimate Guide!"
-[8]: https://www.reddit.com/r/StableDiffusion/comments/zvo3gk/inpainting_q_want_to_remove_a_person_group_of/?utm_source=chatgpt.com "r/StableDiffusion on Reddit: [Inpainting] [Q] Want to remove a person"
-[9]: https://community.openai.com/t/dalle3-inpainting-editing-your-images-with-dall-e/705477?utm_source=chatgpt.com "DALLE3 Inpainting: Editing your images with DALL·E - ChatGPT"
-[10]: https://selldone.com/blog/chatgpt-new-image-ai-prompt-styles-1188 "Top 10 Prompt Styles to Transform Your Images with ChatGPT 4.5 AI Tools"
-[11]: https://editingprompt.com/viral-top-5-chat-gpt-ai-photo-editing-prompts/?utm_source=chatgpt.com "Viral Top 5 Chat Gpt Ai Photo Editing Prompts 2025"
-[12]: https://blog.mlq.ai/dalle-prompts/?utm_source=chatgpt.com "20+ DALL·E Prompts - MLQ.ai"
-[13]: https://editingprompt.com/top-trending-chat-gpt-ai-photo-editing-prompts/?utm_source=chatgpt.com "Top Trending Chat Gpt Ai Photo Editing Prompts 2025"
-[14]: https://www.reddit.com/r/ChatGPT/comments/1jpymze/heres_a_prompt_to_do_amazingly_accurate/?utm_source=chatgpt.com "Here's a prompt to do AMAZINGLY accurate style-transfer in ... - Reddit"
-[15]: https://writesonic.com/blog/chatgpt-prompts?utm_source=chatgpt.com "280+ ChatGPT Prompts & How to Write Your Own - Writesonic"
-[16]: https://editingprompt.com/chat-gpt-10-cinematic-ai-photo-editing-prompts/?utm_source=chatgpt.com "Chat Gpt 10 Cinematic Ai Photo Editing Prompts 2025"
-[17]: https://editingprompt.com/new-top-10-chat-gpt-ai-photo-editing-prompts/?utm_source=chatgpt.com "New Top 10 Chat Gpt Ai Photo Editing Prompts 2025"
-[18]: https://editingprompt.com/chatgpt-bikers-ai-photo-editing-prompts/?utm_source=chatgpt.com "Chatgpt Bikers Ai Photo Editing Prompts 2025"
-[19]: https://selldone.com/blog/chatgpt-new-image-ai-prompt-styles-1188?utm_source=chatgpt.com "Top 10 Prompt Styles to Transform Your Images with ChatGPT 4.5 AI ..." 
+*该 README 由 AI 生成。* 🤖 
