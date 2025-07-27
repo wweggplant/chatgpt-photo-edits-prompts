@@ -7,7 +7,7 @@ import cloudflare from '@astrojs/cloudflare';
 import react from '@astrojs/react';
 import 'dotenv/config';
 
-const siteUrl = process.env.SITE_URL ?? import.meta.env.SITE_URL;
+const siteUrl = process.env.PUBLIC_SITE_URL ?? import.meta.env.PUBLIC_SITE_URL;
 // https://astro.build/config
 export default defineConfig({
     site: siteUrl,
